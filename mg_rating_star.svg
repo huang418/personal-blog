@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80">
+  <defs>
+    <radialGradient id="starG2" cx="40%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#FFF9C4"/><stop offset="40%" stop-color="#FFD54F"/><stop offset="100%" stop-color="#FFB300"/>
+    </radialGradient>
+    <radialGradient id="glowG2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="rgba(255,213,79,0.35)"/><stop offset="100%" stop-color="rgba(255,213,79,0)"/>
+    </radialGradient>
+  </defs>
+  <circle cx="40" cy="40" r="28" fill="url(#glowG2)"/>
+  <polygon points="40,8 49,28 72,28 54,42 60,64 40,50 20,64 26,42 8,28 31,28" fill="url(#starG2)" stroke="#FF8F00" stroke-width="1"/>
+  <text x="40" y="45" text-anchor="middle" fill="#E65100" font-family="Arial" font-size="14" font-weight="bold">★</text>
+  <!-- Float sparkles -->
+  <circle cx="58" cy="18" r="2" fill="#FFE082"/>
+  <circle cx="24" cy="58" r="2" fill="#FFE082"/>
+</svg>

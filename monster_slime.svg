@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 220" width="200" height="220">
+  <defs>
+    <radialGradient id="bodyGrad" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#6EE7B7"/><stop offset="100%" stop-color="#34D399"/>
+    </radialGradient>
+    <linearGradient id="bellyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#A7F3D0"/><stop offset="100%" stop-color="#86EFAC"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="100" cy="208" rx="60" ry="8" fill="rgba(0,0,0,0.08)"/>
+  <!-- Feet -->
+  <ellipse cx="72" cy="200" rx="24" ry="12" fill="#F59E2E"/>
+  <ellipse cx="128" cy="200" rx="24" ry="12" fill="#F59E2E"/>
+  <!-- Body -->
+  <ellipse cx="100" cy="145" rx="55" ry="60" fill="url(#bodyGrad)"/>
+  <!-- Belly -->
+  <ellipse cx="100" cy="155" rx="35" ry="35" fill="url(#bellyGrad)"/>
+  <!-- Left arm -->
+  <ellipse cx="42" cy="140" rx="16" ry="38" transform="rotate(20,42,140)" fill="#34D399"/>
+  <ellipse cx="30" cy="168" rx="12" ry="12" fill="#34D399"/>
+  <!-- Right arm -->
+  <ellipse cx="158" cy="140" rx="16" ry="38" transform="rotate(-20,158,140)" fill="#34D399"/>
+  <ellipse cx="170" cy="168" rx="12" ry="12" fill="#34D399"/>
+  <!-- Head -->
+  <ellipse cx="100" cy="62" rx="50" ry="48" fill="#34D399"/>
+  <!-- Face -->
+  <ellipse cx="100" cy="68" rx="42" ry="40" fill="#6EE7B7"/>
+  <!-- Eyes -->
+  <ellipse cx="80" cy="60" rx="12" ry="14" fill="white"/>
+  <ellipse cx="80" cy="61" rx="8" ry="9" fill="#1F2937"/>
+  <circle cx="78" cy="57" r="3" fill="white"/>
+  <ellipse cx="120" cy="60" rx="12" ry="14" fill="white"/>
+  <ellipse cx="120" cy="61" rx="8" ry="9" fill="#1F2937"/>
+  <circle cx="118" cy="57" r="3" fill="white"/>
+  <!-- Eyebrows -->
+  <path d="M68 46 Q76 42 88 44" stroke="#1F2937" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M112 44 Q124 42 132 46" stroke="#1F2937" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Blush -->
+  <ellipse cx="65" cy="75" rx="10" ry="5" fill="#FCA5A5" opacity="0.3"/>
+  <ellipse cx="135" cy="75" rx="10" ry="5" fill="#FCA5A5" opacity="0.3"/>
+  <!-- Mouth -->
+  <path d="M90 76 Q100 86 110 76" stroke="#1F2937" stroke-width="2.5" fill="#EF4444" stroke-linecap="round"/>
+  <!-- Cheek dimples -->
+  <path d="M85 74 Q87 76 85 78" stroke="#EF4444" stroke-width="1.5" fill="none" opacity="0.4"/>
+  <path d="M115 74 Q113 76 115 78" stroke="#EF4444" stroke-width="1.5" fill="none" opacity="0.4"/>
+  <!-- Star decoration on belly -->
+  <polygon points="100,140 103,148 112,148 105,153 108,162 100,157 92,162 95,153 88,148 97,148" fill="#FCD34D" opacity="0.6"/>
+  <!-- Ears -->
+  <ellipse cx="50" cy="62" rx="10" ry="14" fill="#34D399"/>
+  <ellipse cx="50" cy="62" rx="6" ry="10" fill="#6EE7B7"/>
+  <ellipse cx="150" cy="62" rx="10" ry="14" fill="#34D399"/>
+  <ellipse cx="150" cy="62" rx="6" ry="10" fill="#6EE7B7"/>
+  <!-- Tail -->
+  <path d="M160 160 Q180 150 185 135 Q190 120 180 115" stroke="#34D399" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <circle cx="180" cy="115" r="7" fill="#6EE7B7"/>
+</svg>

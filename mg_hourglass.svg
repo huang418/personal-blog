@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40">
+  <defs><radialGradient id="sG" cx="50%" cy="40%" r="50%"><stop offset="0%" stop-color="#E0F7FA"/><stop offset="60%" stop-color="#80DEEA"/><stop offset="100%" stop-color="#26C6DA"/></radialGradient></defs>
+  <circle cx="20" cy="20" r="15" fill="url(#sG)" stroke="#00BCD4" stroke-width="1.5"/>
+  <!-- Hourglass shape -->
+  <rect x="15" y="9" width="10" height="4" rx="1" fill="#00ACC1"/>
+  <path d="M15 13 L25 13 L22 20 L18 20Z" fill="#00ACC1" opacity="0.4"/>
+  <path d="M18 20 L22 20 L25 27 L15 27Z" fill="#00ACC1" opacity="0.7"/>
+  <rect x="15" y="27" width="10" height="4" rx="1" fill="#00ACC1"/>
+  <!-- Sand particles -->
+  <circle cx="20" cy="23" r="1" fill="#FFE082"/>
+  <circle cx="19" cy="24" r="0.7" fill="#FFE082"/>
+  <circle cx="21" cy="25" r="0.8" fill="#FFE082"/>
+  <line x1="20" y1="17" x2="20" y2="19" stroke="#FFE082" stroke-width="0.5"/>
+</svg>

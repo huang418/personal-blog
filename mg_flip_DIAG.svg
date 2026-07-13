@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80">
+  <circle cx="40" cy="40" r="32" fill="#1A0A3E" stroke="#3A2A7E" stroke-width="2"/>
+  <!-- Diagonal arrows -->
+  <path d="M24 24 L56 56" stroke="#FF6B35" stroke-width="4" stroke-linecap="round"/>
+  <path d="M56 24 L24 56" stroke="#2979FF" stroke-width="4" stroke-linecap="round"/>
+  <polygon points="24,24 24,36 36,24" fill="#FF6B35"/>
+  <polygon points="56,56 56,44 44,56" fill="#FF6B35"/>
+  <polygon points="56,24 56,36 44,24" fill="#2979FF"/>
+  <polygon points="24,56 24,44 36,56" fill="#2979FF"/>
+  <!-- Center X -->
+  <circle cx="40" cy="40" r="5" fill="#3A2A7E" stroke="#FF6B35" stroke-width="1.5"/>
+</svg>
