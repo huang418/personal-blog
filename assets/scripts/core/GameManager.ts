@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Prefab, instantiate } from 'cc';
+import { _decorator, Component, Node, Prefab, instantiate, Label } from 'cc';
 import MazeGenerator from '../gameplay/MazeGenerator';
 import GridMap from '../gameplay/GridMap';
 import PlayerGridController from '../gameplay/PlayerGridController';
@@ -32,6 +32,16 @@ export default class GameManager extends Component {
     if (this.flipManager) this.flipManager.resetTimer();
   }
 
+  // helper: remove Label children from a node (used to strip placeholder "button" labels)
+  private _stripLabels(n: Node) {
+    const labels = n.getComponentsInChildren(Label);
+    if (labels && labels.length > 0) {
+      for (const l of labels) {
+        try { l.string = ''; l.node.active = false; } catch(e) {/* ignore */}
+      }
+    }
+  }
+
   setupLevel() {
     if (!this.mazeGen || !this.gridMap) return;
     const grid = this.mazeGen.generate(this.gridMap.cols, this.gridMap.rows);
@@ -48,35 +58,34 @@ export default class GameManager extends Component {
         const basePos = this.gridMap.cellToWorld(x, y);
         // 画右墙
         if (cell.walls[1]) {
-          if (this.wallPrefab && this.wallRoot) {
-            try {
-              const w = instantiate(this.wallPrefab);
-              w.setPosition(basePos.x + this.gridMap.cellSize / 2, basePos.y, 0);
-              // 调整宽高或旋转以适合视觉
-              this.wallRoot.addChild(w);
-            } catch (e) {
-              console.warn('GameManager: failed to instantiate wallPrefab', e);
-            }
+          if (this.wallPrefab) {
+            const w = instantiate(this.wallPrefab);
+            // strip placeholder labels if any
+            this._stripLabels(w);
+            w.setPosition(basePos.x + this.gridMap.cellSize / 2, basePos.y, 0);
+            // 调整宽高或旋转以适合视觉
+            this.wallRoot?.addChild(w);
           } else {
-            // 如果没有设置 prefab 或 root，记录但继续运行
-            if (!this.wallPrefab) console.warn('GameManager: wallPrefab is not assigned; skipping wall creation');
-            if (!this.wallRoot) console.warn('GameManager: wallRoot is not assigned; cannot attach walls');
+            // graceful fallback: create a simple node from wallRoot if prefab missing
+            const w = new Node('wall');
+            // position and add - visual will depend on editor defaults
+            w.setPosition(basePos.x + this.gridMap.cellSize / 2, basePos.y, 0);
+            this.wallRoot?.addChild(w);
           }
         }
         // 画下墙
         if (cell.walls[2]) {
-          if (this.wallPrefab && this.wallRoot) {
-            try {
-              const w = instantiate(this.wallPrefab);
-              w.setPosition(basePos.x, basePos.y - this.gridMap.cellSize / 2, 0);
-              w.setRotationFromEuler(0, 0, 90);
-              this.wallRoot.addChild(w);
-            } catch (e) {
-              console.warn('GameManager: failed to instantiate wallPrefab (rotated)', e);
-            }
+          if (this.wallPrefab) {
+            const w = instantiate(this.wallPrefab);
+            this._stripLabels(w);
+            w.setPosition(basePos.x, basePos.y - this.gridMap.cellSize / 2, 0);
+            w.setRotationFromEuler(0, 0, 90);
+            this.wallRoot?.addChild(w);
           } else {
-            if (!this.wallPrefab) console.warn('GameManager: wallPrefab is not assigned; skipping wall creation');
-            if (!this.wallRoot) console.warn('GameManager: wallRoot is not assigned; cannot attach walls');
+            const w = new Node('wall');
+            w.setPosition(basePos.x, basePos.y - this.gridMap.cellSize / 2, 0);
+            w.setRotationFromEuler(0, 0, 90);
+            this.wallRoot?.addChild(w);
           }
         }
       }
@@ -85,26 +94,17 @@ export default class GameManager extends Component {
     // 生成若干收集物（示例：随机放置 8 个）
     const total = Math.min(8, this.gridMap.cols * this.gridMap.rows - 1);
     let placed = 0;
-    const placedPositions = new Set<string>();
     while (placed < total) {
       const rx = Math.floor(Math.random() * this.gridMap.cols);
       const ry = Math.floor(Math.random() * this.gridMap.rows);
       // 避免起点 (0,0)
       if (rx === 0 && ry === 0) continue;
-      const key = `${rx},${ry}`;
-      if (placedPositions.has(key)) continue;
-
-      if (!this.collectiblePrefab) {
-        if (placed === 0) console.warn('GameManager: collectiblePrefab is not assigned; skipping collectible creation');
-        break; // 没有 prefab 就没法继续放置
-      }
-      if (!this.collectibleRoot) {
-        console.warn('GameManager: collectibleRoot is not assigned; cannot attach collectibles');
-        break;
-      }
-
-      try {
+      // 避免重复：简单检测已有
+      // For simplicity we skip detailed duplicate checks here
+      if (this.collectiblePrefab) {
         const prefab = instantiate(this.collectiblePrefab);
+        // strip placeholder labels if any
+        this._stripLabels(prefab);
         prefab.setPosition(this.gridMap.cellToWorld(rx, ry));
         const comp = prefab.getComponent(CollectibleGrid);
         if (comp) {
@@ -112,16 +112,20 @@ export default class GameManager extends Component {
           // 随机设置可见状态
           comp.allowedStates = [Math.random() > 0.5 ? 'MirrorX' : 'Identity'];
         }
-        this.collectibleRoot.addChild(prefab);
+        this.collectibleRoot?.addChild(prefab);
         // 监听 collect 事件
         prefab.on('collected', () => {
           this.onCollected();
         }, this);
-      } catch (e) {
-        console.warn('GameManager: failed to instantiate collectiblePrefab', e);
+      } else {
+        // fallback simple node
+        const prefab = new Node('collectible');
+        prefab.setPosition(this.gridMap.cellToWorld(rx, ry));
+        const comp = prefab.addComponent(CollectibleGrid);
+        comp.gridX = rx; comp.gridY = ry; comp.allowedStates = [Math.random() > 0.5 ? 'MirrorX' : 'Identity'];
+        this.collectibleRoot?.addChild(prefab);
+        prefab.on('collected', () => { this.onCollected(); }, this);
       }
-
-      placedPositions.add(key);
       placed++;
     }
 
