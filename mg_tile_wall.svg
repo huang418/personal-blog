@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" width="60" height="60">
+  <defs>
+    <linearGradient id="wl" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3A2A7E"/><stop offset="100%" stop-color="#2A1A5E"/>
+    </linearGradient>
+    <linearGradient id="wlTop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5B4AD8"/><stop offset="100%" stop-color="#3A2A7E"/>
+    </linearGradient>
+  </defs>
+  <rect width="60" height="60" fill="#1A0A3E"/>
+  <!-- Wall face -->
+  <rect x="6" y="6" width="48" height="48" rx="3" fill="url(#wl)"/>
+  <rect x="6" y="6" width="48" height="8" rx="2" fill="url(#wlTop)"/>
+  <!-- Top edge glow -->
+  <rect x="6" y="6" width="48" height="2" rx="1" fill="#8B7CFF" opacity="0.6"/>
+  <!-- Side highlights -->
+  <rect x="6" y="6" width="2" height="48" rx="1" fill="#6B5ADE" opacity="0.4"/>
+</svg>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>镜面迷宫 - 素材预览</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, sans-serif; background: #0D0520; padding: 40px; color: #ddd; }
+  h1 { text-align: center; margin-bottom: 8px; font-size: 28px; background: linear-gradient(90deg, #7C6DFF, #FF6B35); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .subtitle { text-align: center; color: #666; margin-bottom: 40px; font-size: 14px; }
+  .dark-theme .card { background: #1A0A3E; border: 1px solid #3A2A7E; }
+  .dark-theme .card p { color: #bbb; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; max-width: 1100px; margin: 0 auto; }
+  .card { background: #1A0A3E; border-radius: 12px; padding: 20px; border: 1px solid #3A2A7E; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 120px; }
+  .card svg, .card object { max-width: 100%; height: auto; }
+  .card p { margin-top: 10px; color: #bbb; font-size: 12px; }
+  .card .tag { display: inline-block; background: rgba(124,109,255,0.2); color: #8B7CFF; font-size: 10px; padding: 2px 8px; border-radius: 8px; margin-top: 6px; }
+  .card .note { display: inline-block; background: rgba(255,107,53,0.15); color: #FF8D6B; font-size: 10px; padding: 2px 8px; border-radius: 8px; margin-top: 4px; }
+  .section-title { max-width: 1100px; margin: 40px auto 12px; font-size: 18px; color: #aaa; padding-left: 8px; border-left: 3px solid #7C6DFF; }
+  .section-sub { max-width: 1100px; margin: 24px auto 8px; font-size: 14px; color: #777; padding-left: 8px; }
+  .dark-grid { background: #0D0520; }
+  .dark-grid .card { background: #1A0A3E; }
+  hr { max-width: 1100px; margin: 40px auto; border: none; border-top: 1px solid #2A1A5E; }
+</style>
+</head>
+<body class="dark-theme">
+
+<h1>🎮 镜面迷宫 · 原创素材包</h1>
+<p class="subtitle">霓虹极简风格 · 俯视图 · 适配抖音小游戏</p>
+
+<h2 class="section-title">🧑 角色（俯视）</h2>
+<div class="grid">
+  <div class="card"><object data="mg_player_topdown.svg" width="64" height="64"></object><p>主角 · 男生</p><span class="tag">俯视图</span></div>
+  <div class="card"><object data="mg_player2_topdown.svg" width="64" height="64"></object><p>主角 · 女生</p><span class="tag">俯视图</span></div>
+</div>
+
+<h2 class="section-title">🧱 迷宫瓦片</h2>
+<div class="grid">
+  <div class="card" style="background:#0D0520;border-color:#2A1A5E"><object data="mg_tile_floor.svg" width="48" height="48"></object><p>地板</p></div>
+  <div class="card"><object data="mg_tile_wall.svg" width="48" height="48"></object><p>墙壁</p><span class="tag">带发光边缘</span></div>
+  <div class="card" style="background:#0D0520;border-color:#2A1A5E"><object data="mg_tile_invisible.svg" width="48" height="48"></object><p>隐形地板</p><span class="tag">翻转后出现</span></div>
+</div>
+
+<h2 class="section-title">⭐ 收集品</h2>
+<div class="grid">
+  <div class="card"><object data="mg_key.svg" width="40" height="40"></object><p>钥匙</p><span class="tag">通关必备</span></div>
+  <div class="card"><object data="mg_hourglass.svg" width="40" height="40"></object><p>时沙</p><span class="tag">暂停翻转</span></div>
+  <div class="card"><object data="mg_compass.svg" width="40" height="40"></object><p>罗盘碎片</p><span class="tag">提示方向</span></div>
+  <div class="card"><object data="coin.svg" width="40" height="40"></object><p>金币</p><span class="tag">额外分数</span></div>
+  <div class="card"><object data="star.svg" width="40" height="40"></object><p>星星</p><span class="tag">收集品</span></div>
+  <div class="card"><object data="heart.svg" width="40" height="40"></object><p>爱心</p><span class="tag">生命值</span></div>
+</div>
+
+<h2 class="section-title">⚠️ 机关与特殊元素</h2>
+<div class="grid">
+  <div class="card"><object data="mg_exit.svg" width="48" height="48"></object><p>出口</p><span class="tag">绿色指向</span></div>
+  <div class="card"><object data="mg_decoy_exit.svg" width="48" height="48"></object><p>假出口</p><span class="tag" style="background:rgba(255,23,68,0.2);color:#FF5252;">扣时间！</span></div>
+  <div class="card"><object data="mg_trap.svg" width="48" height="48"></object><p>陷阱</p><span class="tag" style="background:rgba(255,23,68,0.2);color:#FF5252;">躲避</span></div>
+  <div class="card"><object data="mg_portal.svg" width="48" height="48"></object><p>传送门</p><span class="tag">紫色闪光</span></div>
+</div>
+
+<h2 class="section-title">🔄 翻转状态指示器</h2>
+<div class="grid">
+  <div class="card"><object data="mg_flip_LR.svg" width="56" height="56"></object><p>左右镜像</p></div>
+  <div class="card"><object data="mg_flip_UD.svg" width="56" height="56"></object><p>上下镜像</p></div>
+  <div class="card"><object data="mg_flip_DIAG.svg" width="56" height="56"></object><p>对角线翻转</p></div>
+</div>
+
+<h2 class="section-title">✨ 特效</h2>
+<div class="grid">
+  <div class="card"><object data="mg_flash_flip.svg" width="80" height="80"></object><p>翻转闪烁</p><span class="note">全屏覆盖</span></div>
+  <div class="card"><object data="mg_explosion.svg" width="64" height="64"></object><p>爆炸/撞墙</p><span class="note">反馈特效</span></div>
+  <div class="card"><object data="mg_complete_icon.svg" width="64" height="64"></object><p>通关成功</p><span class="tag" style="background:rgba(0,230,118,0.2);color:#00E676;">✓</span></div>
+  <div class="card"><object data="mg_rating_star.svg" width="56" height="56"></object><p>评价星星</p><span class="tag">三星评分</span></div>
+</div>
+
+<h2 class="section-title">🎛️ UI</h2>
+<div class="grid">
+  <div class="card"><object data="mg_joystick.svg" width="64" height="64"></object><p>摇杆</p><span class="tag">HUD 控件</span></div>
+  <div class="card"><object data="mg_progress_bar.svg" width="80" height="24"></object><p>进度条</p><span class="tag">HUD 控件</span></div>
+  <div class="card"><object data="button_start.svg" width="120" height="40"></object><p>按钮</p></div>
+</div>
+
+<hr/>
+<div style="max-width:1100px;margin:0 auto;text-align:center">
+<p style="color:#555;font-size:13px;">
+✅ 原创设计 · 可用于抖音小游戏商用 · SVG 矢量格式 · 共 26 个独立素材<br>
+所有元素采用深色背景配霓虹光效，适配「镜面迷宫」的极简几何视觉风格
+</p>
+</div>
+</body>
+</html>

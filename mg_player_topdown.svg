@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80">
+  <defs>
+    <radialGradient id="pGrad" cx="40%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#7C6DFF"/>
+      <stop offset="70%" stop-color="#5B4AD8"/>
+      <stop offset="100%" stop-color="#3D2EAE"/>
+    </radialGradient>
+    <radialGradient id="pGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="rgba(124,109,255,0.3)"/>
+      <stop offset="100%" stop-color="rgba(124,109,255,0)"/>
+    </radialGradient>
+  </defs>
+  <circle cx="40" cy="40" r="22" fill="url(#pGlow)"/>
+  <circle cx="40" cy="40" r="16" fill="url(#pGrad)" stroke="#8B7CFF" stroke-width="1.5"/>
+  <!-- Eyes (facing right) -->
+  <ellipse cx="36" cy="36" rx="3" ry="3.5" fill="white"/>
+  <ellipse cx="46" cy="36" rx="3" ry="3.5" fill="white"/>
+  <circle cx="36" cy="36" r="2" fill="#1A0A3E"/>
+  <circle cx="46" cy="36" r="2" fill="#1A0A3E"/>
+  <!-- Eye shine -->
+  <circle cx="35" cy="35" r="1" fill="rgba(255,255,255,0.7)"/>
+  <circle cx="45" cy="35" r="1" fill="rgba(255,255,255,0.7)"/>
+  <!-- Happy mouth -->
+  <path d="M36 44 Q41 49 46 44" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <!-- Direction arrow (subtle, showing "forward") -->
+  <polygon points="40,22 36,28 44,28" fill="rgba(255,255,255,0.25)"/>
+</svg>

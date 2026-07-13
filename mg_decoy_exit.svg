@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" width="60" height="60">
+  <defs>
+    <linearGradient id="de" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FF80AB"/><stop offset="100%" stop-color="#D50000"/></linearGradient>
+  </defs>
+  <rect width="60" height="60" fill="#1A0A3E" rx="30"/>
+  <polygon points="30,12 24,24 36,24" fill="url(#de)"/>
+  <rect x="28" y="22" width="4" height="22" rx="2" fill="url(#de)"/>
+  <!-- Cross mark = fake -->
+  <line x1="42" y1="14" x2="52" y2="24" stroke="#D50000" stroke-width="3" stroke-linecap="round"/>
+  <line x1="52" y1="14" x2="42" y2="24" stroke="#D50000" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="30" cy="30" r="26" fill="none" stroke="#FF1744" stroke-width="1.5" opacity="0.4"/>
+  <text x="30" y="48" text-anchor="middle" fill="#FF1744" font-family="Arial" font-size="7" font-weight="bold" opacity="0.6">FAKE</text>
+</svg>

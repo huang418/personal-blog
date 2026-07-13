@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80">
+  <defs>
+    <linearGradient id="bGa" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1A0A3E"/><stop offset="100%" stop-color="#0D0520"/></linearGradient>
+    <radialGradient id="bPs" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="rgba(124,109,255,0.2)"/><stop offset="100%" stop-color="rgba(124,109,255,0)"/></radialGradient>
+  </defs>
+  <rect x="0" y="0" width="80" height="80" rx="12" fill="url(#bGa)" stroke="#3A2A7E" stroke-width="1"/>
+  <rect x="8" y="8" width="64" height="64" rx="8" fill="url(#bPs)"/>
+  <!-- Joystick base -->
+  <circle cx="40" cy="40" r="20" fill="#2A1A5E" stroke="#5B4AD8" stroke-width="1.5"/>
+  <!-- Joystick top -->
+  <circle cx="40" cy="40" r="10" fill="url(#bGa)" stroke="#8B7CFF" stroke-width="2"/>
+  <circle cx="37" cy="37" r="3" fill="rgba(139,124,255,0.3)"/>
+  <!-- Directional hints -->
+  <polygon points="40,16 38,24 42,24" fill="rgba(139,124,255,0.3)"/>
+  <polygon points="40,64 38,56 42,56" fill="rgba(139,124,255,0.3)"/>
+  <polygon points="16,40 24,38 24,42" fill="rgba(139,124,255,0.3)"/>
+  <polygon points="64,40 56,38 56,42" fill="rgba(139,124,255,0.3)"/>
+</svg>
