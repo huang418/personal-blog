@@ -1,0 +1,6 @@
+{
+  "flipInterval": 5.0,
+  "warningTime": 0.5,
+  "playerSpeed": 200,
+  "maze": { "cols": 11, "rows": 9 }
+}
