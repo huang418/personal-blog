@@ -1,0 +1,12 @@
+[
+  { "id": 1, "cols": 11, "rows": 11, "keys": 1 },
+  { "id": 2, "cols": 11, "rows": 11, "keys": 1 },
+  { "id": 3, "cols": 13, "rows": 13, "keys": 1 },
+  { "id": 4, "cols": 13, "rows": 13, "keys": 2 },
+  { "id": 5, "cols": 15, "rows": 15, "keys": 2 },
+  { "id": 6, "cols": 15, "rows": 15, "keys": 2 },
+  { "id": 7, "cols": 17, "rows": 17, "keys": 3 },
+  { "id": 8, "cols": 17, "rows": 17, "keys": 3 },
+  { "id": 9, "cols": 19, "rows": 19, "keys": 4 },
+  { "id": 10, "cols": 21, "rows": 21, "keys": 5 }
+]
