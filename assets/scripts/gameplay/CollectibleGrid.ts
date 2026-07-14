@@ -1,4 +1,4 @@
-import { _decorator, Component, Node } from 'cc';
+import { _decorator, Component, Node, CCString } from 'cc';
 import { FlipState, FlipEvents } from '../core/FlipManager';
 const { ccclass, property } = _decorator;
 
@@ -8,7 +8,7 @@ export default class CollectibleGrid extends Component {
   gridX = 0;
   @property
   gridY = 0;
-  @property([String])
+  @property([CCString])
   allowedStates: string[] = [FlipState.Identity];
 
   private _collected = false;

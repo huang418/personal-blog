@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Vec2, tween, Vec3 } from 'cc';
+import { _decorator, Component, Node, Vec2, tween, Vec3, UITransform } from 'cc';
 import { InputEvents } from '../input/SwipeInput';
 import { FlipEvents, FlipState } from '../core/FlipManager';
 import { mapInputToWorld, vecToDir4, Dir4 } from '../core/InputMapper';
@@ -39,6 +39,7 @@ export default class PlayerGridController extends Component {
     if (this.map) {
       const pos = this.map.cellToWorld(x, y);
       this.node.setPosition(pos);
+      this._fitPlayerToCell();
     }
   }
 
@@ -68,6 +69,7 @@ export default class PlayerGridController extends Component {
       .call(() => {
         this.gridX = nx; this.gridY = ny;
         this._moving = false;
+        this._fitPlayerToCell();
         // 通知收集物检测
         this.node.emit('player:moved', { x: nx, y: ny });
       })
@@ -82,5 +84,17 @@ export default class PlayerGridController extends Component {
       .by(0.06, { position: new Vec3(0, 8, 0) })
       .call(() => this.node.setPosition(orig))
       .start();
+  }
+
+  private _fitPlayerToCell() {
+    if (!this.map) return;
+    const cellSize = this.map.cellSize || 64; // fallback
+    const ui = this.node.getComponent(UITransform);
+    if (!ui) return;
+    const w = ui.width || ui.contentSize.width || 1;
+    const h = ui.height || ui.contentSize.height || 1;
+    const max = Math.max(w, h, 1);
+    const scale = cellSize / max;
+    this.node.setScale(scale, scale, 1);
   }
 }
